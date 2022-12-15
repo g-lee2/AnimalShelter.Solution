@@ -38,5 +38,19 @@ namespace AnimalShelter.Controllers
       Animal thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
       return View(thisAnimal);
     }
+
+    public ActionResult Edit(int id)
+    {
+      Animal thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
+      return View(thisAnimal);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Animal animal)
+    {
+      _db.Animals.Update(animal);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

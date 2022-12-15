@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@model AnimalShelter.Models.Animal
+
+<h2>Edit</h2>
+
+<h4>Edit this animal's info: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.AnimalId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  <br>
+  @Html.LabelFor(model => model.Type)
+  @Html.EditorFor(model => model.Type)
+  <br>
+  @Html.LabelFor(model => model.Breed)
+  @Html.EditorFor(model => model.Breed)
+  <br>
+  @Html.LabelFor(model => model.DateOfAdmittanceMonth)
+  @Html.TextBoxFor(model => model.DateOfAdmittanceMonth, new { type = "number", min = "1", max = "12", step = "1" })
+  @Html.LabelFor(model => model.DateOfAdmittanceDay)
+  @Html.TextBoxFor(model => model.DateOfAdmittanceDay, new { type = "number", min = "1", max = "31", step = "1" })
+  @Html.LabelFor(model => model.DateOfAdmittanceYear)
+  @Html.TextBoxFor(model => model.DateOfAdmittanceYear, new { type = "number", min = "1990", max = "2022", step = "1" })
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
