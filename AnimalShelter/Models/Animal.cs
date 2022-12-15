@@ -5,10 +5,9 @@ namespace AnimalShelter.Models
     public string Name { get; set; }
     public string Breed { get; set; }
     public string Type { get; set; }
-    public int dateOfAdmittanceMonth { get; set; }
-    public int dateOfAdmittanceDay { get; set; }
-    public int dateOfAdmittanceYear { get; set; }
+    public int DateOfAdmittanceMonth { get; set; }
+    public int DateOfAdmittanceDay { get; set; }
+    public int DateOfAdmittanceYear { get; set; }
     public int AnimalId { get; set; }
-    
   }
 }
